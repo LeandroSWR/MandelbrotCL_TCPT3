@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace T3_LeandroBras_22100770
 {
@@ -102,7 +103,7 @@ namespace T3_LeandroBras_22100770
                     + Cl.GetProgramBuildInfo(program, gpu, ProgramBuildInfo.Log, out err);
                 string caption = "OpenCL Compilation Error";
                 Console.WriteLine(message, caption);
-                // MessageBox.Show(message, caption);
+                MessageBox.Show(message, caption);
             }
         }
 
@@ -112,8 +113,8 @@ namespace T3_LeandroBras_22100770
         /// <param name="ptr">Pointer to the image buffer that the processed image data will be copied to.</param>
         /// <param name="countX">Number of columns of the Image</param>
         /// <param name="countY">Number of rows of the Image</param>
-        /// <param name="xMin">The Minimum value of the x-coordinate of the image. Defaults to -2,3</param>
-        /// <param name="yMin">The Minimum value of the y-coordinate of the image. Defaults to -1,2</param>
+        /// <param name="centerX">The Center value of the x-coordinate of the image. Defaults to -2,3</param>
+        /// <param name="centerY">The Center value of the y-coordinate of the image. Defaults to -1,2</param>
         /// <param name="scale">The scale factor used to generate the image data. Defaults to 3</param>
         public void ReComputeGPU(IntPtr ptr, int countX, int countY, double centerX = -2.3, double centerY = -1.2, double scale = 3, int maxIterations = 1000)
         {
@@ -144,8 +145,8 @@ namespace T3_LeandroBras_22100770
         /// <param name="ptr">Pointer to the image buffer that the processed image data will be copied to.</param>
         /// <param name="countX">Number of columns of the Image</param>
         /// <param name="countY">Number of rows of the Image</param>
-        /// <param name="xMin">The Minimum value of the x-coordinate of the image. Defaults to -2,3</param>
-        /// <param name="yMin">The Minimum value of the y-coordinate of the image. Defaults to -1,2</param>
+        /// <param name="centerX">The Center value of the x-coordinate of the image. Defaults to -2,3</param>
+        /// <param name="centerY">The Center value of the y-coordinate of the image. Defaults to -1,2</param>
         /// <param name="scale">The scale factor used to generate the image data. Defaults to 3</param>
         public void ComputeGPU(IntPtr ptr, int countX, int countY, double centerX = -3.0d / 4.0d, double centerY = 0.0d, double scale = 3)
         {
@@ -174,7 +175,6 @@ namespace T3_LeandroBras_22100770
             lineSizeMem = (Mem)Cl.CreateBuffer(context, MemFlags.ReadOnly, sizeof(int), out err);
             if (err != ErrorCode.Success) { errors += err; }
             // Create an output buffer for the results
-            //outputMem = (Mem)Cl.CreateBuffer(context, MemFlags.ReadWrite, new IntPtr(sizeof(int) * countX * countY), ptr, out err);
             outputMem = (Mem)Cl.CreateBuffer(context, MemFlags.WriteOnly, sizeof(int) * countX * countY, out err);
             if (err != ErrorCode.Success) { errors += err; }
 
