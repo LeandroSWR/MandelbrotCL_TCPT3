@@ -1,0 +1,44 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Bonus/1.0.0": {
+        "dependencies": {
+          "OpenBLAS.NET": "0.3.7.1"
+        },
+        "runtime": {
+          "Bonus.dll": {}
+        }
+      },
+      "OpenBLAS.NET/0.3.7.1": {
+        "runtime": {
+          "lib/netstandard2.0/OpenBLAS.NET.dll": {
+            "assemblyVersion": "0.3.7.0",
+            "fileVersion": "0.3.7.0"
+          },
+          "lib/netstandard2.0/openblas.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bonus/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OpenBLAS.NET/0.3.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yZx2csFk099+u3RlXyhwiH2CMUxwmHXSfZfDATC+QhwTFfNkw0d5fNYVWo7D26YvvuDBhOuYzr0nov8Nqgl4zA==",
+      "path": "openblas.net/0.3.7.1",
+      "hashPath": "openblas.net.0.3.7.1.nupkg.sha512"
+    }
+  }
+}
