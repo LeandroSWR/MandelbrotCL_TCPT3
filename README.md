@@ -194,7 +194,7 @@ Times Faster Compared to Linear:
 
 Graph Comparison:
 
-<img src="graph01.png" style="max-width:50%;">
+<img src="graph01.png" style="width:50%;">
 
 From these results we can see two massive leaps in performance, from Linear to
 Parallel and Parallel to OpenCL. With Parallel being `15.73` times faster than
@@ -218,8 +218,8 @@ These techniques are extremely useful for improving the performance of matrix
 operations on CPUs but they may not have a significant impact on GPU
 computations.
 
-<div style="text-align:center">
-    <img src="graph02.png" style="max-width:50%;margin: 10px 20px;">
+<div align="center">
+    <img src="graph02.png" style="width:50%;margin: 10px 20px;">
 </div>
 
 Using multiple `Threads` is a technique for parallel programming that allows
@@ -230,9 +230,9 @@ can be executed simultaneous. However, it also requires careful management of
 shared `resources` and `synchronization` to avoid issues with the data that's being
 handled.
 
-<div style="text-align:center">
-    <img src="graph03.png" style="max-width:50%; margin: 10px 20px;">
-    <img src="graph05.png" style="max-width:50%;margin: 10px 20px;">
+<div align="center">
+    <img src="graph03.png" style="width:50%; margin: 10px 20px;">
+    <img src="graph05.png" style="width:50%;margin: 10px 20px;">
 </div>
 
 Using `OpenCL` and `OpenBlas` are techniques for parallel programming that allow
@@ -247,9 +247,9 @@ performing mathematical operations. However, they also require a significant
 amount of work to set up and manage, and may have a steeper learning curve than
 other techniques.
 
-<div style="text-align:center">
-    <img src="graph01.png" style="max-width:50%;margin: 10px 20px;">
-    <img src="graph04.png" style="max-width:50%;margin: 10px 20px;">
+<div align="center">
+    <img src="graph01.png" style="width:50%;margin: 10px 20px;">
+    <img src="graph04.png" style="width:50%;margin: 10px 20px;">
 </div>
 
 Outside of class "bounds" I also implemented a program that uses `OpenGL` to
