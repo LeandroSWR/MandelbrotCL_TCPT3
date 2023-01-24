@@ -24,8 +24,8 @@ namespace T3_LeandroBras_22100770
         private double scale = 2d;
         private float lockedAspectRatio;
 
-        private int width = 4096;
-        private int height = 4096;
+        private int width = 1024;
+        private int height = 1024;
 
         public List<MandelbrotStats> MStats { get; set; }
         private List<MandelbrotStats> benchStats;
@@ -56,6 +56,8 @@ namespace T3_LeandroBras_22100770
 
             glPicture.Width = glPicture.Height;
             lockedAspectRatio = (float)this.Width / (float)this.Height;
+
+            bmSize.Text = $"{width}x{height}";
 
             Calculate();
         }
@@ -266,6 +268,9 @@ namespace T3_LeandroBras_22100770
 
         private void SaveNewData()
         {
+            if (width != 4096 || height != 4096)
+                return;
+
             string jsonString = JsonConvert.SerializeObject(MStats);
             File.WriteAllText("mStats.json", jsonString);
         }

@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AverageStats.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CalcType.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
